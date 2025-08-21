@@ -1,0 +1,19 @@
+/* CSS Externo */
+
+body {
+    background: #619155;
+    /* cor fundo */
+    color: #000000;
+    /* cor TEXTO */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ; /* trocar a fonte */
+}
+
+a {
+    color: #000000;
+    /* cor texto de novo  */
+    text-decoration: none ; /* sem sublinhamento */
+}
+
+ul {
+    list-style: none; /* estilo de lista */
+}
