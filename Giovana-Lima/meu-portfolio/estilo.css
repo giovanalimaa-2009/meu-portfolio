@@ -1,0 +1,221 @@
+/* CSS Externo */
+
+/* Definir as cores Tema Dark */
+/* raiz */
+:root,
+:root[data-theme='dark'] {
+    --cor-fundo: #913a00;
+    --cor-texto: #f0c39f;
+    --menu-link: #a88f6f;
+
+    --cor-borda: #000000;
+    
+} 
+/* Fundo Branco */
+:root[data-theme='light'] {
+    --cor-fundo: #f0c39f;
+    --cor-texto: #913a00;
+    --menu-link: #4b3019;
+    --cor-borda: #000000;
+ 
+}
+
+/* Inverter Cor LOGO = Filtro */
+html[data-theme='light'] .logo {
+    filter: invert(1);
+}
+
+
+
+/* Reset CSS = Padronizar */
+/* Seletor Universal */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+    background: var(--cor-fundo); /* cor fundo */
+    color: var(--cor-texto); /* cor TEXTOS */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+   color: var(--menu-link);
+   text-decoration: none;
+}
+
+ul {
+    list-style: none;  /* Estilo de Lista */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: var(--cor-fundo);
+    border-bottom: 2px solid var(--cor-borda);
+    position: fixed; /* Voltar */
+    z-index: 9999; /* Camadas */
+    padding: .5rem 1rem;
+}
+
+.menu-desktop {
+    background: var(--cor-fundo);
+    display: none;
+    /* esconde o menu desktop */
+
+}
+
+/* NAV = UL // OL */
+.menu  {
+    display: flex; /* em linha // horizontal */
+    gap: 1rem; /* 16px */
+    align-items: center;
+}
+
+/* LI = listas */
+.menu-item { 
+    width: 100%;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+}
+
+.menu-text {
+    color: var(--menu-link);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+/*--- Menu Hamburger
+botao menu mobile  ----- */
+
+#menuHamburger {
+    margin-left: 1rem;
+}
+
+.btn-menu-mobile {
+    background: var(--cor-fundo);
+    border: none;
+    cursor: pointer;
+    color: var(--cor-texto);
+    display: flex;
+    font-size: 1.8rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.menu-mobile {  /* NAV */
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: var(--cor-fundo);
+    width: 75%;
+    height: 100vh; /* viewPort Altura */
+    border-left: 1px solid var(--cor-borda);
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+    transition: .3s ease-in-out; /* voltar aqui */
+    transform: translateX(100%);
+}
+
+/* Ativar o Menu Mobile */
+.menu-mobile.active {
+    transform: translateX(0%);
+}
+
+.menu-mobile /* nav */
+.menu-list  /* UL */ {  
+    display: flex;
+    flex-direction: column; /* EIXO Y = Vertical */
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1rem 2rem;
+}
+
+.menu-mobile .menu-item  {
+    width: 100%;
+    text-align: center;
+}
+
+.menu-mobile .menu-link {
+    padding: 0.5rem 0;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.logo {
+    width: 3.25rem; /* comprimento */
+    height: auto; /* altura */
+}
+
+.header-toggle {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#home {
+    padding: 4.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+
+/* Medidas Responsivas */
+@media (min-width: 768px) {
+
+    .menu-desktop {
+        display: flex;
+        min-width: 30%; /* alinhar o logo */
+    }
+
+    .btn-menu-mobile {
+        display: none;
+    }
+
+    .header-toggle {
+        min-width: 30%; /* alinhar o logo */
+    }
+
+    header {
+        padding: 1rem 6rem;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    #home {
+        padding: 8rem 6rem 4rem 6rem;
+    }
+    
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+} /* FIM min 768px */
+
+@media (min-width: 1400px) {
+    h1 {
+      font-size: 6.5rem;  
+    }
+}
