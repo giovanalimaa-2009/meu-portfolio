@@ -9,15 +9,16 @@
     --menu-link: #a88f6f;
 
     --cor-borda: #000000;
-    
-} 
+
+}
+
 /* Fundo Branco */
 :root[data-theme='light'] {
     --cor-fundo: #f0c39f;
     --cor-texto: #913a00;
     --menu-link: #4b3019;
     --cor-borda: #000000;
- 
+
 }
 
 /* Inverter Cor LOGO = Filtro */
@@ -30,24 +31,27 @@ html[data-theme='light'] .logo {
 /* Reset CSS = Padronizar */
 /* Seletor Universal */
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background: var(--cor-fundo); /* cor fundo */
-    color: var(--cor-texto); /* cor TEXTOS */
+    background: var(--cor-fundo);
+    /* cor fundo */
+    color: var(--cor-texto);
+    /* cor TEXTOS */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 a {
-   color: var(--menu-link);
-   text-decoration: none;
+    color: var(--menu-link);
+    text-decoration: none;
 }
 
 ul {
-    list-style: none;  /* Estilo de Lista */
+    list-style: none;
+    /* Estilo de Lista */
 }
 
 header {
@@ -57,8 +61,10 @@ header {
     width: 100%;
     background: var(--cor-fundo);
     border-bottom: 2px solid var(--cor-borda);
-    position: fixed; /* Voltar */
-    z-index: 9999; /* Camadas */
+    position: fixed;
+    /* Voltar */
+    z-index: 9999;
+    /* Camadas */
     padding: .5rem 1rem;
 }
 
@@ -70,14 +76,16 @@ header {
 }
 
 /* NAV = UL // OL */
-.menu  {
-    display: flex; /* em linha // horizontal */
-    gap: 1rem; /* 16px */
+.menu {
+    display: flex;
+    /* em linha // horizontal */
+    gap: 1rem;
+    /* 16px */
     align-items: center;
 }
 
 /* LI = listas */
-.menu-item { 
+.menu-item {
     width: 100%;
 }
 
@@ -111,19 +119,22 @@ botao menu mobile  ----- */
     padding: 0.5rem;
 }
 
-.menu-mobile {  /* NAV */
+.menu-mobile {
+    /* NAV */
     position: fixed;
     top: 0;
     right: 0;
     background: var(--cor-fundo);
     width: 75%;
-    height: 100vh; /* viewPort Altura */
+    height: 100vh;
+    /* viewPort Altura */
     border-left: 1px solid var(--cor-borda);
     max-width: 320px;
     display: flex;
     flex-direction: column;
     padding-top: 4rem;
-    transition: .3s ease-in-out; /* voltar aqui */
+    transition: .3s ease-in-out;
+    /* voltar aqui */
     transform: translateX(100%);
 }
 
@@ -132,16 +143,21 @@ botao menu mobile  ----- */
     transform: translateX(0%);
 }
 
-.menu-mobile /* nav */
-.menu-list  /* UL */ {  
+.menu-mobile
+/* nav */
+.menu-list
+
+/* UL */
+    {
     display: flex;
-    flex-direction: column; /* EIXO Y = Vertical */
+    flex-direction: column;
+    /* EIXO Y = Vertical */
     gap: 1rem;
     width: 100%;
     padding: 1rem 1rem 2rem;
 }
 
-.menu-mobile .menu-item  {
+.menu-mobile .menu-item {
     width: 100%;
     text-align: center;
 }
@@ -153,8 +169,10 @@ botao menu mobile  ----- */
 }
 
 .logo {
-    width: 3.25rem; /* comprimento */
-    height: auto; /* altura */
+    width: 3.25rem;
+    /* comprimento */
+    height: auto;
+    /* altura */
 }
 
 .header-toggle {
@@ -167,7 +185,9 @@ botao menu mobile  ----- */
     padding: 4.5rem 1rem;
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 }
+
 .main-content {
     display: flex;
     flex-direction: column;
@@ -179,12 +199,28 @@ h1 {
 }
 
 
+.video iframe {
+
+    aspect-ratio: 16/9;
+} 
+
+
+#home, 
+.projetos, 
+.sobre, 
+.contato {
+
+    padding: 2.5rem 1rem;
+}
+
+
 /* Medidas Responsivas */
 @media (min-width: 768px) {
 
     .menu-desktop {
         display: flex;
-        min-width: 30%; /* alinhar o logo */
+        min-width: 30%;
+        /* alinhar o logo */
     }
 
     .btn-menu-mobile {
@@ -192,7 +228,8 @@ h1 {
     }
 
     .header-toggle {
-        min-width: 30%; /* alinhar o logo */
+        min-width: 30%;
+        /* alinhar o logo */
     }
 
     header {
@@ -203,19 +240,30 @@ h1 {
         font-size: 5rem;
     }
 
-    #home {
+    #home,
+    .projetos,
+    .sobre {
         padding: 8rem 6rem 4rem 6rem;
     }
-    
+
     .main-content {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
-} /* FIM min 768px */
+}
+
+/* FIM min 768px */
 
 @media (min-width: 1400px) {
     h1 {
-      font-size: 6.5rem;  
+        font-size: 6.5rem;
     }
+
+    .descriçao-video,
+    .projetos,
+    .sobre {
+        padding: 10rem 15rem 4rem ;
+    }
+
 }
