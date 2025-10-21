@@ -1,23 +1,27 @@
+/* goggle fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+Código CSS
 /* CSS Externo */
 
 /* Definir as cores Tema Dark */
 /* raiz */
 :root,
 :root[data-theme='dark'] {
-    --cor-fundo: #913a00;
-    --cor-texto: #f0c39f;
-    --menu-link: #a88f6f;
+    --cor-fundo: #5b6070;
+    --cor-texto: #d1d1d1;
+    --menu-link: #000000;
 
-    --cor-borda: #000000;
+    --cor-borda: #ffffff;
 
 }
 
 /* Fundo Branco */
 :root[data-theme='light'] {
-    --cor-fundo: #f0c39f;
-    --cor-texto: #913a00;
-    --menu-link: #4b3019;
-    --cor-borda: #000000;
+    --cor-fundo: #26282b;
+    --cor-texto: #e9e2e2;
+    --menu-link: #000000;
+    --cor-borda: #ffffff;
 
 }
 
@@ -25,8 +29,6 @@
 html[data-theme='light'] .logo {
     filter: invert(1);
 }
-
-
 
 /* Reset CSS = Padronizar */
 /* Seletor Universal */
@@ -38,15 +40,19 @@ html[data-theme='light'] .logo {
 
 body {
     background: var(--cor-fundo);
-    /* cor fundo */
+    /* cor fundo  */
     color: var(--cor-texto);
     /* cor TEXTOS */
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 a {
     color: var(--menu-link);
     text-decoration: none;
+}
+
+i {
+    color: var(--cor-icone);
 }
 
 ul {
@@ -108,7 +114,7 @@ botao menu mobile  ----- */
 }
 
 .btn-menu-mobile {
-    background: var(--cor-fundo);
+    background: transparent;
     border: none;
     cursor: pointer;
     color: var(--cor-texto);
@@ -196,25 +202,141 @@ botao menu mobile  ----- */
 
 h1 {
     font-size: 2.5rem;
+    font-family: "Playfair Display", serif;
 }
 
+h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
 
+h3{
+font-size: 1.55rem;
+font-family:"Playfair Display", serif;
+font-weight: bolder;
+
+}
 .video iframe {
-
     aspect-ratio: 16/9;
-} 
+}
 
-
-#home, 
-.projetos, 
-.sobre, 
+#home,
+.projetos,
+.sobre,
 .contato {
-
     padding: 2.5rem 1rem;
 }
 
+.descricao-video {
+    display: flex;
+    flex-direction: column;
+    background: #333231;
+    padding: 6.25rem 1rem 2rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -6.5rem;
+}
+
+.descricao-video h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-top: -2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* letter-spacing: ; */
+}
+
+.projetos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.projetos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.projeto-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.img-card {
+    width: 100%;
+    border-radius: .5rem;
+}
+
+
+
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card-titulo {
+    color: #4b2004;
+    /* Cor do Texto */
+    font-size: 1rem;
+    /* Tamanho texto */
+    font-weight: 2rem;
+    /* largura das letras */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        /* Estilo das fontes */
+
+}
+
+.card-descricao {
+    color: #331305;
+    /* Cor do Texto */
+    font-size: 1rem;
+    /* Tamanho texto */
+    font-weight: 2rem;
+    /* largura das letras */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        /* Estilo das fontes */
+
+}
+
+.card.lista {
+    color: #1d0501;
+    /* Cor do Texto */
+    font-size: 1rem;
+    /* Tamanho texto */
+    font-weight: 2rem;
+    /* largura das letras */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        /* Estilo das fontes */
+
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Medidas Responsivas */
+@media (max-width: 768px) {
+    #home {
+        padding-top: 8rem;
+    }
+}
+
+
 @media (min-width: 768px) {
 
     .menu-desktop {
@@ -238,6 +360,7 @@ h1 {
 
     h1 {
         font-size: 5rem;
+        font-family: "Playfair Display", serif;
     }
 
     #home,
@@ -255,15 +378,40 @@ h1 {
 
 /* FIM min 768px */
 
+@media (min-width: 992px) {
+    .projeto-card {
+        flex-direction: row;
+    }
+
+    .img-card {
+        /* Tamanho das Fotos */
+        width: 55%;
+    }
+
+    .reverse-card {
+        /* Espelhar */
+        flex-direction: row-reverse;
+    }
+
+
+
+}
+
 @media (min-width: 1400px) {
     h1 {
         font-size: 6.5rem;
     }
+h2{
+    font-size: 4.5rem;
+}
 
-    .descriçao-video,
+h3{
+    font-size: 7.8rem;
+}
+    .descricao-video,
     .projetos,
     .sobre {
-        padding: 10rem 15rem 4rem ;
+        padding: 10rem 15rem 4rem;
     }
 
 }
