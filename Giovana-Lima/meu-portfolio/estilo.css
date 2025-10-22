@@ -8,20 +8,25 @@ Código CSS
 /* raiz */
 :root,
 :root[data-theme='dark'] {
-    --cor-fundo: #5b6070;
+    --cor-fundo: #413f3f;
     --cor-texto: #d1d1d1;
-    --menu-link: #000000;
+    --menu-link: #ffffff;
 
-    --cor-borda: #ffffff;
-
+    --cor-borda: #aaaaaa;
+    --cor-header:#777777;
+    --cor-icone:#ffffff;
 }
 
 /* Fundo Branco */
 :root[data-theme='light'] {
-    --cor-fundo: #26282b;
-    --cor-texto: #e9e2e2;
+    --cor-fundo: #959697;
+    --cor-texto: #000000;
     --menu-link: #000000;
-    --cor-borda: #ffffff;
+   
+    --cor-borda: #cacaca;
+    --cor-header:#363636;
+    --cor-icone:#000000;
+
 
 }
 
@@ -37,6 +42,13 @@ html[data-theme='light'] .logo {
     padding: 0;
     box-sizing: border-box;
 }
+
+html{
+    scroll-behavior: smooth; 
+}
+
+
+
 
 body {
     background: var(--cor-fundo);
@@ -234,7 +246,7 @@ font-weight: bolder;
 .descricao-video {
     display: flex;
     flex-direction: column;
-    background: #333231;
+    background: #c2c0c0;
     padding: 6.25rem 1rem 2rem;
     align-items: center;
     justify-content: flex-start;
@@ -246,6 +258,7 @@ font-weight: bolder;
     text-transform: uppercase;
     margin-top: -2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
     /* letter-spacing: ; */
 }
 
@@ -284,7 +297,7 @@ font-weight: bolder;
 }
 
 .card-titulo {
-    color: #4b2004;
+    color: #000000;
     /* Cor do Texto */
     font-size: 1rem;
     /* Tamanho texto */
@@ -296,7 +309,7 @@ font-weight: bolder;
 }
 
 .card-descricao {
-    color: #331305;
+    color: #000000;
     /* Cor do Texto */
     font-size: 1rem;
     /* Tamanho texto */
@@ -308,7 +321,7 @@ font-weight: bolder;
 }
 
 .card.lista {
-    color: #1d0501;
+    color: #b1b1b1;
     /* Cor do Texto */
     font-size: 1rem;
     /* Tamanho texto */
