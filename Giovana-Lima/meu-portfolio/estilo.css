@@ -13,8 +13,12 @@ Código CSS
     --menu-link: #ffffff;
 
     --cor-borda: #aaaaaa;
-    --cor-header:#777777;
-    --cor-icone:#ffffff;
+    --cor-header: #777777;
+    --cor-icone: #ffffff;
+
+    --cor-hover-icone: #9fcce0;
+
+    --cor-redes-sociais-icone: #ff0000;
 }
 
 /* Fundo Branco */
@@ -22,13 +26,20 @@ Código CSS
     --cor-fundo: #959697;
     --cor-texto: #000000;
     --menu-link: #000000;
-   
+
     --cor-borda: #cacaca;
-    --cor-header:#363636;
-    --cor-icone:#000000;
+    --cor-header: #363636;
+    --cor-icone: #000000;
+
+    --cor-hover-icone: #2b92bece;
+
+    --cor-redes-sociais-icone: #ff02d5;
 
 
 }
+
+
+
 
 /* Inverter Cor LOGO = Filtro */
 html[data-theme='light'] .logo {
@@ -43,8 +54,8 @@ html[data-theme='light'] .logo {
     box-sizing: border-box;
 }
 
-html{
-    scroll-behavior: smooth; 
+html {
+    scroll-behavior: smooth;
 }
 
 
@@ -226,12 +237,13 @@ h2 {
     font-weight: 300;
 }
 
-h3{
-font-size: 1.55rem;
-font-family:"Playfair Display", serif;
-font-weight: bolder;
+h3 {
+    font-size: 1.55rem;
+    font-family: "Playfair Display", serif;
+    font-weight: bolder;
 
 }
+
 .video iframe {
     aspect-ratio: 16/9;
 }
@@ -307,6 +319,31 @@ font-weight: bolder;
         /* Estilo das fontes */
 
 }
+
+.card-item i {
+    margin-right: 8px;
+
+}
+
+.card-item i:hover {
+    color: var(--cor-hover-icone);
+    transition: .03s ease-in-out;
+
+}
+
+
+
+.redes-sociais {
+    font-size: 1.0rem;
+}
+
+.redes-sociais i:hover {
+    color: var(--cor-redes-sociais-icone)
+}
+
+
+
+
 
 .card-descricao {
     color: #000000;
@@ -414,13 +451,15 @@ font-weight: bolder;
     h1 {
         font-size: 6.5rem;
     }
-h2{
-    font-size: 4.5rem;
-}
 
-h3{
-    font-size: 7.8rem;
-}
+    h2 {
+        font-size: 4.5rem;
+    }
+
+    h3 {
+        font-size: 7.8rem;
+    }
+
     .descricao-video,
     .projetos,
     .sobre {
