@@ -1,43 +1,83 @@
+/* goggle fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+Código CSS
 /* CSS Externo */
 
 /* Definir as cores Tema Dark */
 /* raiz */
 :root,
 :root[data-theme='dark'] {
-    --cor-fundo: #182b3d;
-    --cor-texto: #93b6d6;
-    --menu-link: #92b2c7;
+    --cor-fundo: #413f3f;
+    --cor-texto: #d1d1d1;
+    --menu-link: #ffffff;
 
-    --cor-menu: rgb(72, 95, 126);
+    --cor-borda: #aaaaaa;
+    --cor-header: #777777;
+    --cor-icone: #ffffff;
 
-    --cor-borda: #fff;
+    --cor-hover-icone: #9fcce0;
 
+    --cor-redes-sociais-icone: #98c2fa;
+
+    
 }
 
+/* Fundo Branco */
 :root[data-theme='light'] {
-    --cor-fundo: #9ebfda;
-    --cor-texto: #1d3742;
-    --menu-link: #13273a;
+    --cor-fundo: #959697;
+    --cor-texto: #000000;
+    --menu-link: #000000;
 
-    --cor-menu: rgb(72, 95, 126);
+    --cor-borda: #cacaca;
+    --cor-header: #363636;
+    --cor-icone: #000000;
 
-    --cor-borda: #000000;
+    --cor-hover-icone: #2b92bece;
+
+    --cor-redes-sociais-icone: #081035;
+
 
 }
+
+
+
+
+/* Inverter Cor LOGO = Filtro */
+html[data-theme='light'] .logo {
+    filter: invert(1);
+}
+
+/* Reset CSS = Padronizar */
+/* Seletor Universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 
 
 body {
     background: var(--cor-fundo);
-    /* cor fundo */
+    /* cor fundo  */
     color: var(--cor-texto);
     /* cor TEXTOS */
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 a {
     color: var(--menu-link);
     text-decoration: none;
+}
+
+i {
+    color: var(--cor-icone);
 }
 
 ul {
@@ -50,13 +90,17 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: rgb(94, 108, 128);
-    border-bottom: 5px solid #fff;
-
+    background: var(--cor-fundo);
+    border-bottom: 2px solid var(--cor-borda);
+    position: fixed;
+    /* Voltar */
+    z-index: 9999;
+    /* Camadas */
+    padding: .5rem 1rem;
 }
 
 .menu-desktop {
-    background: rgb(94, 108, 128);
+    background: var(--cor-fundo);
     display: none;
     /* esconde o menu desktop */
 
@@ -83,28 +127,27 @@ header {
 
 .menu-text {
     color: var(--menu-link);
-    font-size: .8rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
 }
 
-/*------ Menu Hamburguer 
-botao menu mobile------ */
+/*--- Menu Hamburger
+botao menu mobile  ----- */
 
 #menuHamburger {
     margin-left: 1rem;
 }
 
 .btn-menu-mobile {
-    background: #465d72;
+    background: transparent;
     border: none;
     cursor: pointer;
     color: var(--cor-texto);
     display: flex;
-    font-size: .9rem;
+    font-size: 1.8rem;
     align-items: center;
     justify-content: center;
     padding: 0.5rem;
-
 }
 
 .menu-mobile {
@@ -115,34 +158,37 @@ botao menu mobile------ */
     background: var(--cor-fundo);
     width: 75%;
     height: 100vh;
-    /*viewPort Altura*/
+    /* viewPort Altura */
     border-left: 1px solid var(--cor-borda);
     max-width: 320px;
     display: flex;
     flex-direction: column;
     padding-top: 4rem;
-    transition: .3s ease-in-out; /* voltr aqui*/
+    transition: .3s ease-in-out;
+    /* voltar aqui */
     transform: translateX(100%);
-
 }
 
-/* ativar menu mobile */
+/* Ativar o Menu Mobile */
 .menu-mobile.active {
     transform: translateX(0%);
 }
- 
- 
-.menu-mobile /* nav */
-.meu-list /* Ul*/ {
+
+.menu-mobile
+/* nav */
+.menu-list
+
+/* UL */
+    {
     display: flex;
-    flex-direction: column; /* EIXO Y = Vertical */
+    flex-direction: column;
+    /* EIXO Y = Vertical */
     gap: 1rem;
     width: 100%;
-    padding: 1rem 1rem 8rem;
-    background: rgb(43, 51, 122)
+    padding: 1rem 1rem 2rem;
 }
- 
-.menu-mobile .menu-item  {
+
+.menu-mobile .menu-item {
     width: 100%;
     text-align: center;
 }
@@ -152,19 +198,178 @@ botao menu mobile------ */
     display: inline-block;
     font-size: 1rem;
 }
-.logo{
-    width: 2.75rem;/* comprimento */
-    height:; /* altura*/
+
+.logo {
+    width: 3.25rem;
+    /* comprimento */
+    height: auto;
+    /* altura */
 }
 
-.header-toggle { 
-    display:flex;
+.header-toggle {
+    display: flex;
     justify-content: flex-end;
-    
+    align-items: center;
+}
+
+#home {
+    padding: 4.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-family: "Playfair Display", serif;
+}
+
+h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 1.55rem;
+    font-family: "Playfair Display", serif;
+    font-weight: bolder;
+
+}
+
+.video iframe {
+    aspect-ratio: 16/9;
+}
+
+#home,
+.projetos,
+.sobre,
+.contato {
+    padding: 2.5rem 1rem;
+}
+
+.descricao-video {
+    display: flex;
+    flex-direction: column;
+    background: #c2c0c0;
+    padding: 6.25rem 1rem 2rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -6.5rem;
+}
+
+.descricao-video h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-top: -2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
+    /* letter-spacing: ; */
+}
+
+.projetos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.projetos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.projeto-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.img-card {
+    width: 100%;
+    border-radius: .5rem;
+}
+
+
+
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card-titulo {
+    color: #000000;
+    /* Cor do Texto */
+    font-size: 1rem;
+    /* Tamanho texto */
+    font-weight: 2rem;
+    /* largura das letras */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        /* Estilo das fontes */
+
+}
+
+.card-item i {
+    margin-right: 8px;
+
+}
+
+.card-item i:hover {
+    color: var(--cor-hover-icone);
+    transition: .03s ease-in-out;
 
 }
 
 
+
+.redes-sociais {
+    font-size: 1.0rem;
+}
+
+.redes-sociais i:hover {
+    color: var(--cor-redes-sociais-icone)
+}
+
+
+
+
+
+.card-descricao {
+    color: #000000;
+    /* Cor do Texto */
+    font-size: 1rem;
+    /* Tamanho texto */
+    font-weight: 2rem;
+    /* largura das letras */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        /* Estilo das fontes */
+
+}
+
+.card.lista {
+    color: #b1b1b1;
+    /* Cor do Texto */
+    font-size: 1rem;
+    /* Tamanho texto */
+    font-weight: 2rem;
+    /* largura das letras */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        /* Estilo das fontes */
+
+}
 
 
 
@@ -177,20 +382,90 @@ botao menu mobile------ */
 
 
 /* Medidas Responsivas */
+@media (max-width: 768px) {
+    #home {
+        padding-top: 8rem;
+    }
+}
+
+
 @media (min-width: 768px) {
 
     .menu-desktop {
         display: flex;
         min-width: 30%;
+        /* alinhar o logo */
     }
 
     .btn-menu-mobile {
         display: none;
     }
 
-
     .header-toggle {
         min-width: 30%;
+        /* alinhar o logo */
+    }
+
+    header {
+        padding: 1rem 6rem;
+    }
+
+    h1 {
+        font-size: 5rem;
+        font-family: "Playfair Display", serif;
+    }
+
+    #home,
+    .projetos,
+    .sobre {
+        padding: 8rem 6rem 4rem 6rem;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* FIM min 768px */
+
+@media (min-width: 992px) {
+    .projeto-card {
+        flex-direction: row;
+    }
+
+    .img-card {
+        /* Tamanho das Fotos */
+        width: 55%;
+    }
+
+    .reverse-card {
+        /* Espelhar */
+        flex-direction: row-reverse;
+    }
+
+
+
+}
+
+@media (min-width: 1400px) {
+    h1 {
+        font-size: 6.5rem;
+    }
+
+    h2 {
+        font-size: 4.5rem;
+    }
+
+    h3 {
+        font-size: 7.8rem;
+    }
+
+    .descricao-video,
+    .projetos,
+    .sobre {
+        padding: 10rem 15rem 4rem;
     }
 
 }
